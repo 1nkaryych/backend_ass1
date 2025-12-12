@@ -1,0 +1,209 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #c7c7c8 0%, #e4d7f2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.container {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #555;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+input[type="number"] {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s;
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(135deg, #bbbfd1 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  margin-top: 10px;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+#result {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f5f5f5;
+  border-radius: 5px;
+  text-align: center;
+  display: none;
+}
+
+#result.show {
+  display: block;
+}
+
+#result h2 {
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 24px;
+}
+
+#result p {
+  color: #666;
+  font-size: 16px;
+}
+
+#result strong {
+  color: #764ba2;
+  font-size: 18px;
+}
+
+/* Result and error styles for the updated markup */
+.card { /* page card wrapper */
+  padding: 20px 10px;
+}
+
+#errorMessage {
+  margin-top: 18px;
+  padding: 10px 12px;
+  background: #ffe6e6;
+  color: #8a1f1f;
+  border: 1px solid #ffb3b3;
+  border-radius: 6px;
+  font-weight: 600;
+  display: none;
+}
+
+#resultContainer {
+  margin-top: 20px;
+  display: none;
+}
+
+.result-card {
+  background: linear-gradient(180deg, #ffffff 0%, #f7f9ff 100%);
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 6px 18px rgba(76, 90, 255, 0.08);
+  text-align: center;
+}
+
+.bmi-value {
+  font-size: 42px;
+  font-weight: 800;
+  color: #3b3fdf;
+  margin: 6px 0;
+}
+
+.bmi-category {
+  font-size: 18px;
+  font-weight: 700;
+  color: #764ba2;
+  margin-bottom: 8px;
+}
+
+.bmi-message {
+  color: #555;
+  font-size: 15px;
+}
+
+/* Utility to show elements */
+.show { display: block !important; }
+
+/* Category color styles */
+.result-card {
+  border: 2px solid transparent;
+  color: #000; /* Ensure black text for readability across all categories */
+}
+
+/* UNDERWEIGHT — Light Blue */
+.result-card.underweight {
+  background: #e3f1ff;       /* light blue */
+  border-color: #1f78d1;     /* darker blue */
+}
+.bmi-category.underweight {
+  color: #1f78d1;
+}
+
+/* NORMAL — Light Green */
+.result-card.normal {
+  background: #dbf7e6;       /* light green */
+  border-color: #27ae60;     /* darker green */
+}
+.bmi-category.normal {
+  color: #27ae60;
+}
+
+/* OVERWEIGHT — Light Yellow */
+.result-card.overweight {
+  background: #fff4cc;       /* light yellow */
+  border-color: #e2b414;     /* darker yellow */
+}
+.bmi-category.overweight {
+  color: #e2b414;
+}
+
+/* OBESE — Light Red */
+.result-card.obese {
+  background: #ffe1e1;       /* light red */
+  border-color: #d64545;     /* darker red */
+}
+.bmi-category.obese {
+  color: #d64545;
+}
+
+/* Ensure BMI value + message always stay black for readability */
+.result-card .bmi-value,
+.result-card .bmi-message {
+  color: #000;
+}
+
